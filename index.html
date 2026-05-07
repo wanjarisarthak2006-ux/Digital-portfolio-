@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarthak Wanjari | Portfolio</title>
+  <meta name="description" content="Sarthak Prabhakar Wanjari - Computer Engineering Student at MITAOE | Frontend Developer | Cybersecurity Enthusiast" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">SW</div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      <div class="loader-text">INITIALIZING PORTFOLIO<span class="blink">_</span></div>
+    </div>
+  </div>
+
+  <!-- ===== CURSOR GLOW ===== -->
+  <div id="cursor-glow"></div>
+  <div id="cursor-dot"></div>
+
+  <!-- ===== SCROLL PROGRESS ===== -->
+  <div id="scroll-progress"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>SW<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certificates" class="nav-link">Certs</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" title="Toggle theme">
+          <i class="fas fa-sun" id="theme-icon"></i>
+        </button>
+        <button class="btn-resume-nav" onclick="openResumeModal()">
+          <i class="fas fa-file-alt"></i> Resume
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about" class="mob-link">About</a>
+      <a href="#skills" class="mob-link">Skills</a>
+      <a href="#projects" class="mob-link">Projects</a>
+      <a href="#certificates" class="mob-link">Certs</a>
+      <a href="#experience" class="mob-link">Experience</a>
+      <a href="#contact" class="mob-link">Contact</a>
+      <button class="btn-resume-nav mob-resume" onclick="openResumeModal()">View Resume</button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-left reveal-left">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for Internships &amp; Opportunities
+        </div>
+        <h1 class="hero-heading">
+          Hi, I'm<br />
+          <span class="hero-name">Sarthak Wanjari</span>
+        </h1>
+        <div class="hero-typing-wrap">
+          <span class="typing-prefix">&gt;&nbsp;</span>
+          <span id="typing-text" class="typing-text"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+        <p class="hero-desc">
+          I'm a passionate Computer Engineering student at <span class="highlight">MITAOE, Pune</span> focused on mastering modern technologies and building impactful digital solutions. I constantly learn coding from every possible source and implement my skills through practical projects, cybersecurity training, and development experience.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">
+            <span>View Projects</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <button class="btn-secondary" onclick="openResumeModal()">
+            <i class="fas fa-download"></i>
+            <span>Download Resume</span>
+          </button>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/wanjarisarthak2006-ux" target="_blank" class="social-chip">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://instagram.com/sarthakwanjari_" target="_blank" class="social-chip">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="mailto:wanjarisarthak2006@gmail.com" class="social-chip">
+            <i class="fas fa-envelope"></i> Email
+          </a>
+        </div>
+      </div>
+      <div class="hero-right reveal-right">
+        <div class="profile-ring-outer">
+          <div class="profile-ring-mid">
+            <div class="profile-ring-inner">
+              <div class="profile-img-wrap">
+                <img src="assets/images/profile.png" alt="Sarthak Wanjari" class="profile-img" />
+              </div>
+            </div>
+          </div>
+          <!-- Orbiting dots -->
+          <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
+          <div class="orbit orbit-2"><div class="orbit-dot dot-cyan"></div></div>
+          <div class="orbit orbit-3"><div class="orbit-dot dot-purple"></div></div>
+        </div>
+        <!-- Floating info cards -->
+        <div class="float-card card-top-right">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Pune, Maharashtra</span>
+        </div>
+        <div class="float-card card-bottom-left">
+          <i class="fas fa-graduation-cap"></i>
+          <span>1st Year CE @ MITAOE</span>
+        </div>
+        <div class="float-card card-bottom-right">
+          <i class="fas fa-shield-alt"></i>
+          <span>Cybersecurity Intern</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">// 01. about_me</span>
+        <h2 class="section-title">Who I Am</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal-left">
+          <div class="about-card glass">
+            <p>I'm <strong>Sarthak Prabhakar Wanjari</strong>, a 1st year Computer Engineering student at <strong>MIT Academy of Engineering, Pune</strong>. My journey into coding started with a single goal — to build a <em>successful technology career</em> by mastering everything from web development to cybersecurity.</p>
+            <p>I have a strong self-learning mindset and I absorb knowledge from every possible resource — courses, certifications, hands-on projects, and real-world internships. I believe in implementing what I learn, not just studying it.</p>
+            <p>My passion lies in <strong>website development</strong>, <strong>practical software projects</strong>, and <strong>cybersecurity</strong>. My goal is to become a highly skilled software developer who creates impactful digital experiences and contributes meaningfully to the tech ecosystem.</p>
+            <div class="about-meta">
+              <div class="meta-item"><i class="fas fa-university"></i><span>MIT Academy of Engineering</span></div>
+              <div class="meta-item"><i class="fas fa-code-branch"></i><span>Computer Engineering, 1st Year</span></div>
+              <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span>Pune, Maharashtra, India</span></div>
+              <div class="meta-item"><i class="fas fa-envelope"></i><span>wanjarisarthak2006@gmail.com</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="about-stats reveal-right">
+          <div class="stat-card glass" data-count="3">
+            <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+            <div class="stat-num counter" data-target="3">0</div>
+            <div class="stat-label">Projects Completed</div>
+            <div class="stat-glow"></div>
+          </div>
+          <div class="stat-card glass" data-count="8">
+            <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+            <div class="stat-num counter" data-target="8">0</div>
+            <div class="stat-label">Certifications Earned</div>
+            <div class="stat-glow"></div>
+          </div>
+          <div class="stat-card glass" data-count="9">
+            <div class="stat-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="stat-num counter" data-target="9">0</div>
+            <div class="stat-label">Technologies Learning</div>
+            <div class="stat-glow"></div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="stat-num">1</div>
+            <div class="stat-label">Internship Experience</div>
+            <div class="stat-glow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">// 02. tech_stack</span>
+        <h2 class="section-title">Skills &amp; Technologies</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <!-- Technical Skills -->
+        <div class="skills-col reveal-left">
+          <h3 class="skills-subtitle"><i class="fas fa-terminal"></i> Technical Skills</h3>
+          <div class="skill-bars">
+            <div class="skill-item" data-skill="HTML / CSS" data-level="85">
+              <div class="skill-header"><span class="skill-name"><i class="fab fa-html5"></i> HTML / CSS</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item" data-skill="Python" data-level="75">
+              <div class="skill-header"><span class="skill-name"><i class="fab fa-python"></i> Python</span><span class="skill-pct">75%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-item" data-skill="C++" data-level="60">
+              <div class="skill-header"><span class="skill-name"><i class="fas fa-code"></i> C++</span><span class="skill-pct">60%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="60"></div></div>
+            </div>
+            <div class="skill-item" data-skill="JavaScript" data-level="55">
+              <div class="skill-header"><span class="skill-name"><i class="fab fa-js"></i> JavaScript</span><span class="skill-pct">55%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="55"></div></div>
+            </div>
+            <div class="skill-item" data-skill="GitHub" data-level="70">
+              <div class="skill-header"><span class="skill-name"><i class="fab fa-github"></i> GitHub</span><span class="skill-pct">70%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-item" data-skill="Cybersecurity Basics" data-level="65">
+              <div class="skill-header"><span class="skill-name"><i class="fas fa-shield-alt"></i> Cybersecurity Basics</span><span class="skill-pct">65%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="65"></div></div>
+            </div>
+            <div class="skill-item" data-skill="SQL Basics" data-level="50">
+              <div class="skill-header"><span class="skill-name"><i class="fas fa-database"></i> SQL Basics</span><span class="skill-pct">50%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="50"></div></div>
+            </div>
+            <div class="skill-item" data-skill="Kali Linux" data-level="55">
+              <div class="skill-header"><span class="skill-name"><i class="fab fa-linux"></i> Kali Linux</span><span class="skill-pct">55%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="55"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills + Tech Badges -->
+        <div class="skills-col reveal-right">
+          <h3 class="skills-subtitle"><i class="fas fa-brain"></i> Soft Skills</h3>
+          <div class="soft-skills-grid">
+            <div class="soft-card glass">
+              <div class="soft-icon"><i class="fas fa-puzzle-piece"></i></div>
+              <span>Problem Solving</span>
+            </div>
+            <div class="soft-card glass">
+              <div class="soft-icon"><i class="fas fa-users"></i></div>
+              <span>Team Collaboration</span>
+            </div>
+            <div class="soft-card glass">
+              <div class="soft-icon"><i class="fas fa-book-open"></i></div>
+              <span>Self Learning</span>
+            </div>
+            <div class="soft-card glass">
+              <div class="soft-icon"><i class="fas fa-sync-alt"></i></div>
+              <span>Adaptability</span>
+            </div>
+            <div class="soft-card glass">
+              <div class="soft-icon"><i class="fas fa-lightbulb"></i></div>
+              <span>Creative Thinking</span>
+            </div>
+            <div class="soft-card glass">
+              <div class="soft-icon"><i class="fas fa-clock"></i></div>
+              <span>Time Management</span>
+            </div>
+          </div>
+
+          <h3 class="skills-subtitle mt-2"><i class="fas fa-tools"></i> Tools &amp; Tech</h3>
+          <div class="tech-badges">
+            <span class="badge"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="badge"><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span class="badge"><i class="fab fa-python"></i> Python</span>
+            <span class="badge"><i class="fab fa-js"></i> JavaScript</span>
+            <span class="badge"><i class="fas fa-code"></i> C++</span>
+            <span class="badge"><i class="fab fa-github"></i> GitHub</span>
+            <span class="badge"><i class="fab fa-linux"></i> Kali Linux</span>
+            <span class="badge"><i class="fas fa-database"></i> MySQL</span>
+            <span class="badge"><i class="fas fa-server"></i> Apache</span>
+            <span class="badge"><i class="fas fa-shield-virus"></i> DVWA</span>
+            <span class="badge"><i class="fas fa-robot"></i> AI Tools</span>
+            <span class="badge"><i class="fab fa-git-alt"></i> Git</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">// 03. projects</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card glass reveal-up" style="--delay:0.1s">
+          <div class="project-top">
+            <div class="project-icon"><i class="fas fa-search-location"></i></div>
+            <div class="project-links">
+              <a href="https://campus-lost-found-portal-1.onrender.com/register" target="_blank" class="proj-link" title="Live Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/wanjarisarthak2006-ux" target="_blank" class="proj-link" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-number">01</div>
+          <h3 class="project-title">Lost &amp; Found Portal</h3>
+          <p class="project-desc">A smart web-based portal developed for MITAOE students to report, search, and recover lost items efficiently with real-time updates and a clean user interface.</p>
+          <ul class="project-features">
+            <li><i class="fas fa-check-circle"></i> Lost item reporting system</li>
+            <li><i class="fas fa-check-circle"></i> Smart search &amp; filtering</li>
+            <li><i class="fas fa-check-circle"></i> Organized digital records</li>
+            <li><i class="fas fa-check-circle"></i> Faster recovery process</li>
+          </ul>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+            </div>
+            <a href="https://campus-lost-found-portal-1.onrender.com/register" target="_blank" class="btn-live">
+              Live Demo <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass reveal-up" style="--delay:0.2s">
+          <div class="project-top">
+            <div class="project-icon icon-red"><i class="fas fa-bug"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/wanjarisarthak2006-ux" target="_blank" class="proj-link" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-number">02</div>
+          <h3 class="project-title">Web App Penetration Testing (DVWA)</h3>
+          <p class="project-desc">A cybersecurity major project focused on identifying and exploiting common web vulnerabilities using DVWA (Damn Vulnerable Web Application) in a controlled ethical environment.</p>
+          <ul class="project-features">
+            <li><i class="fas fa-check-circle"></i> SQL Injection &amp; XSS attacks</li>
+            <li><i class="fas fa-check-circle"></i> Brute Force &amp; Command Injection</li>
+            <li><i class="fas fa-check-circle"></i> Real-world vulnerability analysis</li>
+            <li><i class="fas fa-check-circle"></i> Ethical hacking &amp; prevention</li>
+          </ul>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="tag">Kali Linux</span>
+              <span class="tag">DVWA</span>
+              <span class="tag">Apache</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Burp Suite</span>
+            </div>
+          </div>
+          <div class="project-glow glow-red"></div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card glass reveal-up" style="--delay:0.3s">
+          <div class="project-top">
+            <div class="project-icon icon-green"><i class="fas fa-lock"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/wanjarisarthak2006-ux" target="_blank" class="proj-link" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-number">03</div>
+          <h3 class="project-title">Cybersecurity Minor Project</h3>
+          <p class="project-desc">A cybersecurity-focused practical implementation project completed during the Mindenious Edutech training program to improve security awareness and build technical understanding of real-world threats.</p>
+          <ul class="project-features">
+            <li><i class="fas fa-check-circle"></i> Security concepts implementation</li>
+            <li><i class="fas fa-check-circle"></i> Threat analysis &amp; risk assessment</li>
+            <li><i class="fas fa-check-circle"></i> Security awareness training</li>
+            <li><i class="fas fa-check-circle"></i> Documented findings &amp; report</li>
+          </ul>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Networking</span>
+            </div>
+          </div>
+          <div class="project-glow glow-green"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATES SECTION ===== -->
+  <section id="certificates" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">// 04. certifications</span>
+        <h2 class="section-title">Achievements &amp; Certifications</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="certs-grid">
+
+        <div class="cert-card glass reveal-up" style="--delay:0.05s" onclick="openCertModal('assets/certs/python1.pdf','Cisco Python Essentials 1')">
+          <div class="cert-logo cisco-logo"><i class="fab fa-python"></i></div>
+          <div class="cert-body">
+            <div class="cert-issuer">Cisco Networking Academy</div>
+            <div class="cert-name">Python Essentials 1</div>
+            <div class="cert-date"><i class="fas fa-calendar-alt"></i> Apr 08, 2026</div>
+            <div class="cert-id">Cert ID: a695bd9d-3708-45e4</div>
+          </div>
+          <div class="cert-hover-label"><i class="fas fa-eye"></i> Preview Certificate</div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card glass reveal-up" style="--delay:0.1s" onclick="openCertModal('assets/certs/python2.pdf','Cisco Python Essentials 2')">
+          <div class="cert-logo cisco-logo"><i class="fab fa-python"></i></div>
+          <div class="cert-body">
+            <div class="cert-issuer">Cisco Networking Academy</div>
+            <div class="cert-name">Python Essentials 2</div>
+            <div class="cert-date"><i class="fas fa-calendar-alt"></i> Apr 11, 2026</div>
+            <div class="cert-id">Cert ID: c3877737-a4af-4b4c</div>
+          </div>
+          <div class="cert-hover-label"><i class="fas fa-eye"></i> Preview Certificate</div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card glass reveal-up" style="--delay:0.15s" onclick="openCertModal('assets/certs/training.pdf','Mindenious Cybersecurity Training')">
+          <div class="cert-logo mind-logo"><i class="fas fa-shield-alt"></i></div>
+          <div class="cert-body">
+            <div class="cert-issuer">Mindenious Edutech</div>
+            <div class="cert-name">Cybersecurity Training</div>
+            <div class="cert-date"><i class="fas fa-calendar-alt"></i> Nov – Dec 2025</div>
+            <div class="cert-id">Cert ID: MIND-TRN-25F668</div>
+          </div>
+          <div class="cert-hover-label"><i class="fas fa-eye"></i> Preview Certificate</div>
+          <div class="cert-glow glow-yellow"></div>
+        </div>
+
+        <div class="cert-card glass reveal-up" style="--delay:0.2s" onclick="openCertModal('assets/certs/internship.pdf','Mindenious Cybersecurity Internship')">
+          <div class="cert-logo mind-logo"><i class="fas fa-user-shield"></i></div>
+          <div class="cert-body">
+            <div class="cert-issuer">Mindenious Edutech</div>
+            <div class="cert-name">Cybersecurity Internship</div>
+            <div class="cert-date"><i class="fas fa-calendar-alt"></i> Dec 2025 – Jan 2026</div>
+            <div class="cert-id">Cert ID: MIND-INT-25F668</div>
+          </div>
+          <div class="cert-hover-label"><i class="fas fa-eye"></i> Preview Certificate</div>
+          <div class="cert-glow glow-yellow"></div>
+        </div>
+
+        <div class="cert-card glass reveal-up" style="--delay:0.25s" onclick="openCertModal('assets/certs/be10x.pdf','BE10X AI Tools Workshop')">
+          <div class="cert-logo be10x-logo"><i class="fas fa-robot"></i></div>
+          <div class="cert-body">
+            <div class="cert-issuer">be10x</div>
+            <div class="cert-name">AI Tools Workshop</div>
+            <div class="cert-date"><i class="fas fa-calendar-alt"></i> Apr 12, 2026</div>
+            <div class="cert-id">AI Tools &amp; ChatGPT Workshop</div>
+          </div>
+          <div class="cert-hover-label"><i class="fas fa-eye"></i> Preview Certificate</div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card glass reveal-up" style="--delay:0.3s" onclick="openCertModal('assets/certs/ai_fluency_students.pdf','Anthropic – AI Fluency for Students')">
+          <div class="cert-logo anthropic-logo"><i class="fas fa-brain"></i></div>
+          <div class="cert-body">
+            <div class="cert-issuer">Anthropic</div>
+            <div class="cert-name">AI Fluency for Students</div>
+            <div class="cert-date"><i class="fas fa-calendar-alt"></i> 2025</div>
+            <div class="cert-id">Certificate of Completion</div>
+          </div>
+          <div class="cert-hover-label"><i class="fas fa-eye"></i> Preview Certificate</div>
+          <div class="cert-glow glow-orange"></div>
+        </div>
+
+        <div class="cert-card glass reveal-up" style="--delay:0.35s" onclick="openCertModal('assets/certs/ai_fluency_nonprofits.pdf','Anthropic – AI Fluency for Nonprofits')">
+          <div class="cert-logo anthropic-logo"><i class="fas fa-brain"></i></div>
+          <div class="cert-body">
+            <div class="cert-issuer">Anthropic</div>
+            <div class="cert-name">AI Fluency for Nonprofits</div>
+            <div class="cert-date"><i class="fas fa-calendar-alt"></i> 2025</div>
+            <div class="cert-id">Certificate of Completion</div>
+          </div>
+          <div class="cert-hover-label"><i class="fas fa-eye"></i> Preview Certificate</div>
+          <div class="cert-glow glow-orange"></div>
+        </div>
+
+        <div class="cert-card glass reveal-up" style="--delay:0.4s" onclick="openCertModal('assets/certs/ai_fluency_framework.pdf','Anthropic – AI Fluency: Framework & Foundations')">
+          <div class="cert-logo anthropic-logo"><i class="fas fa-brain"></i></div>
+          <div class="cert-body">
+            <div class="cert-issuer">Anthropic</div>
+            <div class="cert-name">AI Fluency: Framework &amp; Foundations</div>
+            <div class="cert-date"><i class="fas fa-calendar-alt"></i> 2025</div>
+            <div class="cert-id">Certificate of Completion</div>
+          </div>
+          <div class="cert-hover-label"><i class="fas fa-eye"></i> Preview Certificate</div>
+          <div class="cert-glow glow-orange"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">// 05. experience</span>
+        <h2 class="section-title">Experience &amp; Timeline</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item reveal-left">
+          <div class="tl-dot"><i class="fas fa-briefcase"></i></div>
+          <div class="tl-content glass">
+            <div class="tl-date"><i class="fas fa-calendar"></i> Dec 2025 – Jan 2026</div>
+            <h3 class="tl-title">Cybersecurity Intern</h3>
+            <div class="tl-company"><i class="fas fa-building"></i> Mindenious Edutech Pvt. Ltd.</div>
+            <p class="tl-desc">Completed a month-long cybersecurity internship demonstrating diligence, consistency, and innovation. Gained hands-on experience in security tools, vulnerability assessment, and real-world threat scenarios.</p>
+            <div class="tl-tags">
+              <span class="tag">Kali Linux</span><span class="tag">Network Security</span><span class="tag">Ethical Hacking</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal-right">
+          <div class="tl-dot dot-yellow"><i class="fas fa-graduation-cap"></i></div>
+          <div class="tl-content glass">
+            <div class="tl-date"><i class="fas fa-calendar"></i> Nov – Dec 2025</div>
+            <h3 class="tl-title">Cybersecurity Training</h3>
+            <div class="tl-company"><i class="fas fa-building"></i> Mindenious Edutech Pvt. Ltd.</div>
+            <p class="tl-desc">Completed intensive cybersecurity training covering foundational and intermediate security concepts. Learned attack vectors, defense mechanisms, and ethical hacking principles through structured modules.</p>
+            <div class="tl-tags">
+              <span class="tag">VAPT</span><span class="tag">Security Concepts</span><span class="tag">Threat Analysis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal-left">
+          <div class="tl-dot dot-green"><i class="fas fa-code"></i></div>
+          <div class="tl-content glass">
+            <div class="tl-date"><i class="fas fa-calendar"></i> 2025</div>
+            <h3 class="tl-title">Web Development – Lost &amp; Found Portal</h3>
+            <div class="tl-company"><i class="fas fa-university"></i> MIT Academy of Engineering</div>
+            <p class="tl-desc">Independently designed and deployed a full-stack Lost &amp; Found Portal for the MITAOE campus. Built with React.js, Node.js, Express, and MongoDB, deployed live on Render.com with Cloudinary integration for images.</p>
+            <div class="tl-tags">
+              <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">Deployed</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal-right">
+          <div class="tl-dot dot-purple"><i class="fas fa-robot"></i></div>
+          <div class="tl-content glass">
+            <div class="tl-date"><i class="fas fa-calendar"></i> Apr 2026</div>
+            <h3 class="tl-title">Python Essentials 1 &amp; 2 — Cisco</h3>
+            <div class="tl-company"><i class="fas fa-university"></i> MITAOE via Cisco Networking Academy</div>
+            <p class="tl-desc">Successfully completed both Python Essentials 1 and 2 through the official Cisco Networking Academy program at MITAOE. Mastered Python fundamentals, data structures, OOP, and file handling.</p>
+            <div class="tl-tags">
+              <span class="tag">Python</span><span class="tag">Cisco</span><span class="tag">MITAOE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal-left">
+          <div class="tl-dot dot-cyan"><i class="fas fa-robot"></i></div>
+          <div class="tl-content glass">
+            <div class="tl-date"><i class="fas fa-calendar"></i> 2025 – 2026</div>
+            <h3 class="tl-title">AI Fluency Certifications — Anthropic</h3>
+            <div class="tl-company"><i class="fas fa-brain"></i> Anthropic</div>
+            <p class="tl-desc">Earned three AI Fluency certifications from Anthropic covering Framework &amp; Foundations, AI for Students, and AI for Nonprofits. Developed proficiency in leveraging modern AI tools for productivity and problem-solving.</p>
+            <div class="tl-tags">
+              <span class="tag">Anthropic</span><span class="tag">AI Tools</span><span class="tag">Claude</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal-right">
+          <div class="tl-dot dot-orange"><i class="fas fa-microchip"></i></div>
+          <div class="tl-content glass">
+            <div class="tl-date"><i class="fas fa-calendar"></i> Apr 12, 2026</div>
+            <h3 class="tl-title">AI Tools &amp; ChatGPT Workshop — be10x</h3>
+            <div class="tl-company"><i class="fas fa-building"></i> be10x</div>
+            <p class="tl-desc">Completed the AI Tools Workshop by be10x. Learned to create presentations using AI in under 5 minutes, analyse data using AI in under 30 minutes, and code &amp; debug using AI in under 10 minutes.</p>
+            <div class="tl-tags">
+              <span class="tag">ChatGPT</span><span class="tag">AI Productivity</span><span class="tag">be10x</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">// 06. contact</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-line"></div>
+        <p class="section-sub">Have an opportunity, project idea, or just want to say hi? My inbox is always open.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <div class="contact-card glass">
+            <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+            <div class="cc-body">
+              <div class="cc-label">Email</div>
+              <a href="mailto:wanjarisarthak2006@gmail.com" class="cc-val">wanjarisarthak2006@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-card glass">
+            <div class="cc-icon"><i class="fas fa-phone"></i></div>
+            <div class="cc-body">
+              <div class="cc-label">Phone</div>
+              <a href="tel:+919356237862" class="cc-val">+91 9356237862</a>
+            </div>
+          </div>
+          <div class="contact-card glass">
+            <div class="cc-icon"><i class="fab fa-github"></i></div>
+            <div class="cc-body">
+              <div class="cc-label">GitHub</div>
+              <a href="https://github.com/wanjarisarthak2006-ux" target="_blank" class="cc-val">wanjarisarthak2006-ux</a>
+            </div>
+          </div>
+          <div class="contact-card glass">
+            <div class="cc-icon"><i class="fab fa-instagram"></i></div>
+            <div class="cc-body">
+              <div class="cc-label">Instagram</div>
+              <a href="https://instagram.com/sarthakwanjari_" target="_blank" class="cc-val">@sarthakwanjari_</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal-right">
+          <div class="glass contact-form-card">
+            <h3 class="form-title">Send a Message</h3>
+            <div class="form-group">
+              <input type="text" id="form-name" placeholder=" " required />
+              <label for="form-name">Your Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="form-email" placeholder=" " required />
+              <label for="form-email">Your Email</label>
+            </div>
+            <div class="form-group">
+              <input type="text" id="form-subject" placeholder=" " />
+              <label for="form-subject">Subject</label>
+            </div>
+            <div class="form-group">
+              <textarea id="form-msg" rows="5" placeholder=" " required></textarea>
+              <label for="form-msg">Your Message</label>
+            </div>
+            <button class="btn-primary btn-full" onclick="handleFormSubmit()">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+            <div id="form-success" class="form-success hidden">
+              <i class="fas fa-check-circle"></i> Message sent successfully! I'll get back to you soon.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer">
+    <div class="footer-glow-bar"></div>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>SW<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-quote">"Building skills, creating projects, and growing every day."</p>
+      <div class="footer-socials">
+        <a href="https://github.com/wanjarisarthak2006-ux" target="_blank" class="footer-social-btn" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://instagram.com/sarthakwanjari_" target="_blank" class="footer-social-btn" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="mailto:wanjarisarthak2006@gmail.com" class="footer-social-btn" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+919356237862" class="footer-social-btn" title="Phone">
+          <i class="fas fa-phone"></i>
+        </a>
+      </div>
+      <div class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certs</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Sarthak Prabhakar Wanjari &nbsp;|&nbsp; Computer Engineering, MITAOE, Pune
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== CERTIFICATE MODAL ===== -->
+  <div id="cert-modal" class="modal-overlay" onclick="closeCertModal(event)">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="cert-modal-title">Certificate</h3>
+        <button class="modal-close" onclick="closeCertModalBtn()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <iframe id="cert-iframe" src="" title="Certificate Preview" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <a id="cert-download-btn" href="#" download class="btn-primary">
+          <i class="fas fa-download"></i> Download Certificate
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RESUME MODAL ===== -->
+  <div id="resume-modal" class="modal-overlay" onclick="closeResumeModal(event)">
+    <div class="modal-box modal-resume">
+      <div class="modal-header">
+        <h3>My Resume</h3>
+        <button class="modal-close" onclick="closeResumeBtnClick()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body resume-placeholder">
+        <div class="resume-notice glass">
+          <i class="fas fa-file-alt resume-icon"></i>
+          <h4>Resume Preview</h4>
+          <p>Place your resume file as <code>assets/resume.pdf</code> in the portfolio folder. It will display here automatically.</p>
+          <p class="resume-hint">For now, you can download or email it directly.</p>
+          <div class="resume-actions">
+            <a href="assets/resume.pdf" download class="btn-primary">
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+            <a href="mailto:wanjarisarthak2006@gmail.com?subject=Resume Request" class="btn-secondary">
+              <i class="fas fa-envelope"></i> Request via Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FLOATING SOCIAL SIDEBAR ===== -->
+  <div class="floating-socials">
+    <a href="https://github.com/wanjarisarthak2006-ux" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://instagram.com/sarthakwanjari_" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:wanjarisarthak2006@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <div class="float-line"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
